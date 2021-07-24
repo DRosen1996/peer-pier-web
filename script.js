@@ -7,7 +7,7 @@ let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let videoBtn = document.querySelectorAll('.vid-btn');
 
-window.onscroll = () =>{
+window.onscroll = () => {
     searchBtn.classList.remove('fa-times');
     searchBar.classList.remove('active');
     menu.classList.remove('fa-times');
@@ -15,26 +15,29 @@ window.onscroll = () =>{
     loginForm.classList.remove('active');
 }
 
-menu.addEventListener('click', () =>{
+console.log(navbar);
+console.log(navbar.classList);
+
+menu.addEventListener('click', () => {
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
 });
 
-searchBtn.addEventListener('click', () =>{
+searchBtn.addEventListener('click', () => {
     searchBtn.classList.toggle('fa-times');
     searchBar.classList.toggle('active');
 });
 
-formBtn.addEventListener('click', () =>{
+formBtn.addEventListener('click', () => {
     loginForm.classList.add('active');
 });
 
-formClose.addEventListener('click', () =>{
+formClose.addEventListener('click', () => {
     loginForm.classList.remove('active');
 });
 
-videoBtn.forEach(btn =>{
-    btn.addEventListener('click', ()=>{
+videoBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
         document.querySelector('.controls .active').classList.remove('active');
         btn.classList.add('active');
         let src = btn.getAttribute('data-src');
